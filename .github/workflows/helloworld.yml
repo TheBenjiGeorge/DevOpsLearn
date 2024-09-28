@@ -1,0 +1,23 @@
+name: Hello World Test
+
+on:
+ push:
+  branches: [main]
+  
+jobs:
+ build:
+
+  runs-on: ubuntu-latest
+
+  steps:
+  - uses: actions@checkoutv4
+  - name: Set Up Python 3.10
+    uses: actions/setup-python@v3
+    with:
+     python-version: "3.10"
+
+  - name: Py Test
+    uses: | 
+     pytest
+  
+   
